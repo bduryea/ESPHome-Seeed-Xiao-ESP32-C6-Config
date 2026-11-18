@@ -1,0 +1,1 @@
+# ESPHome-Seeed-Xiao-ESP32-C6-Config

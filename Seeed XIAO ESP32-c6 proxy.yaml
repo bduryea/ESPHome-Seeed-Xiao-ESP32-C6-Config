@@ -13,7 +13,7 @@ esphome:
     - priority: -10
       then:
         - output.turn_off: rf_switch_enable    # LOW -> RF switch power ON
-        - output.turn_on: rf_antenna_select    # HIGH -> external antenna (U.FL)
+        - output.turn_off: rf_antenna_select   # LOW -> internal antenna [orig. HIGH -> external antenna (U.FL)]
 
 logger:
   level: DEBUG
@@ -63,7 +63,7 @@ switch:
   - platform: template
     name: "External Antenna"
     optimistic: true
-    restore_mode: ALWAYS_ON
+    restore_mode: ALWAYS_OFF
     turn_on_action:
       - output.turn_off: rf_switch_enable    # LOW -> RF switch power ON
       - output.turn_on: rf_antenna_select    # HIGH -> external antenna (U.FL/RF2)
